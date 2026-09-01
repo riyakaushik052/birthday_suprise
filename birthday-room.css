@@ -1,0 +1,1209 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #24113d 0%,
+            #54265f 55%,
+            #24152f 100%
+        );
+
+}
+
+
+/* ========================= */
+/* CELEBRATION */
+/* ========================= */
+
+#celebration {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation: celebrationOut 2.5s forwards;
+
+}
+
+
+.popper {
+
+    position: absolute;
+
+    top: 42%;
+
+    font-size: 70px;
+
+    animation: popperPop 1s ease-out forwards;
+
+}
+
+
+.popper.left {
+    left: 8%;
+}
+
+
+.popper.right {
+    right: 8%;
+}
+
+
+@keyframes popperPop {
+
+    0% {
+        transform: scale(0) rotate(-20deg);
+    }
+
+    60% {
+        transform: scale(1.4) rotate(10deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+
+@keyframes celebrationOut {
+
+    0%,70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* ========================= */
+/* ROOM */
+/* ========================= */
+
+#birthdayRoom {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    opacity: 0;
+
+    animation: roomReveal 2s ease forwards;
+
+    animation-delay: 1.2s;
+
+}
+
+
+@keyframes roomReveal {
+
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* ========================= */
+/* LIGHTS */
+/* ========================= */
+
+.lights {
+
+    position: absolute;
+
+    top: 15px;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 25px;
+
+    letter-spacing: 18px;
+
+    animation: lightsGlow 1.5s infinite alternate;
+
+}
+
+
+@keyframes lightsGlow {
+
+    from {
+        opacity: .5;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* ========================= */
+/* BANNER */
+/* ========================= */
+
+.banner {
+
+    position: absolute;
+
+    top: 60px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 13px 35px;
+
+    background: #ff6f91;
+
+    color: white;
+
+    border-radius: 15px;
+
+    font-size: clamp(18px, 3vw, 32px);
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.3);
+
+    animation: bannerSwing 3s ease-in-out infinite;
+
+}
+
+
+@keyframes bannerSwing {
+
+    0%,100% {
+        transform: translateX(-50%) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateX(-50%) rotate(1deg);
+    }
+
+}
+
+
+/* ========================= */
+/* BALLOONS */
+/* ========================= */
+
+.balloon {
+
+    position: absolute;
+
+    font-size: 55px;
+
+    animation: balloonFloat 3s ease-in-out infinite;
+
+}
+
+
+.balloon1 {
+    left: 5%;
+    top: 15%;
+}
+
+.balloon2 {
+    left: 17%;
+    top: 27%;
+}
+
+.balloon3 {
+    left: 3%;
+    bottom: 20%;
+}
+
+.balloon4 {
+    right: 5%;
+    top: 15%;
+}
+
+.balloon5 {
+    right: 17%;
+    top: 27%;
+}
+
+.balloon6 {
+    right: 3%;
+    bottom: 20%;
+}
+
+
+@keyframes balloonFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* ========================= */
+/* CHARACTERS */
+/* ========================= */
+
+.character {
+
+    position: absolute;
+
+    bottom: 18%;
+
+    width: 160px;
+
+    text-align: center;
+
+    animation: characterFloat 3s ease-in-out infinite;
+
+}
+
+
+.girl {
+    left: 20%;
+}
+
+
+.boy {
+    right: 20%;
+    animation-delay: .8s;
+}
+
+
+@keyframes characterFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+/* HEAD */
+
+.characterHead {
+
+    position: relative;
+
+    width: 115px;
+    height: 115px;
+
+    margin: auto;
+
+    background: #ffd6b3;
+
+    border: 4px solid #333;
+
+    border-radius: 50%;
+
+}
+
+
+.boyHead {
+    background: #f2c49f;
+}
+
+
+/* GIRL HAIR */
+
+.hair {
+
+    position: absolute;
+
+    width: 120px;
+    height: 65px;
+
+    left: -6px;
+    top: -10px;
+
+    background: #3b2030;
+
+    border-radius: 60% 60% 25% 25%;
+
+}
+
+
+/* BOY HAIR */
+
+.boyHair {
+
+    position: absolute;
+
+    width: 100px;
+    height: 40px;
+
+    left: 5px;
+    top: -8px;
+
+    background: #29232b;
+
+    border-radius: 60% 60% 20% 20%;
+
+}
+
+
+/* EYES */
+
+.eye {
+
+    position: absolute;
+
+    top: 48px;
+
+    width: 12px;
+    height: 18px;
+
+    background: #222;
+
+    border-radius: 50%;
+
+}
+
+
+.eye1 {
+    left: 28px;
+}
+
+
+.eye2 {
+    right: 28px;
+}
+
+
+/* CHEEKS */
+
+.cheek {
+
+    position: absolute;
+
+    top: 72px;
+
+    width: 18px;
+    height: 9px;
+
+    background: #ff9eb5;
+
+    border-radius: 50%;
+
+}
+
+
+.cheek1 {
+    left: 13px;
+}
+
+
+.cheek2 {
+    right: 13px;
+}
+
+
+/* SMILE */
+
+.mouth {
+
+    position: absolute;
+
+    width: 25px;
+    height: 13px;
+
+    left: 50%;
+
+    top: 72px;
+
+    transform: translateX(-50%);
+
+    border-bottom: 3px solid #333;
+
+    border-radius: 50%;
+
+}
+
+
+/* BODY */
+
+.characterBody {
+
+    width: 100px;
+    height: 115px;
+
+    margin: -2px auto 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 65px;
+
+}
+
+
+/* ========================= */
+/* TABLE */
+/* ========================= */
+
+.table {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 13%;
+
+    transform: translateX(-50%);
+
+    width: 300px;
+
+}
+
+
+.tableTop {
+
+    width: 300px;
+    height: 35px;
+
+    background: #9b5a3c;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 7px 15px rgba(0,0,0,.3);
+
+}
+
+
+.tableLeg {
+
+    position: absolute;
+
+    top: 32px;
+
+    width: 28px;
+
+    height: 140px;
+
+    background: #70402e;
+
+}
+
+
+.leftLeg {
+    left: 35px;
+}
+
+
+.rightLeg {
+    right: 35px;
+}
+
+
+/* ========================= */
+/* CAKE */
+/* ========================= */
+
+.cake {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+
+}
+
+
+.cakeTop {
+
+    font-size: 80px;
+
+    animation: cakeBounce 2s ease-in-out infinite;
+
+}
+
+
+@keyframes cakeBounce {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
+/* CANDLE */
+
+.candle {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: -12px;
+
+    transform: translateX(-50%);
+
+    font-size: 25px;
+
+}
+
+
+.flame {
+
+    animation: flameFlicker .6s infinite alternate;
+
+}
+
+
+@keyframes flameFlicker {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+
+}
+
+
+/* ========================= */
+/* KNIFE */
+/* ========================= */
+
+.knife {
+
+    position: absolute;
+
+    left: calc(50% + 180px);
+
+    bottom: 15%;
+
+    font-size: 45px;
+
+    transform: rotate(-20deg);
+
+    animation: knifeFloat 2s ease-in-out infinite;
+
+}
+
+
+@keyframes knifeFloat {
+
+    0%,100% {
+        transform: rotate(-20deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-20deg) translateY(-7px);
+    }
+
+}
+
+
+/* ========================= */
+/* FLOOR */
+/* ========================= */
+
+.floorDecor {
+
+    position: absolute;
+
+    bottom: 5%;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 25px;
+
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 700px) {
+
+    .banner {
+        top: 55px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .character {
+        bottom: 22%;
+        transform: scale(.75);
+    }
+
+    .girl {
+        left: 2%;
+    }
+
+    .boy {
+        right: 2%;
+    }
+
+    .table {
+        bottom: 12%;
+        transform: translateX(-50%) scale(.75);
+    }
+
+    .knife {
+        left: 78%;
+        bottom: 17%;
+        font-size: 35px;
+    }
+
+    .balloon {
+        font-size: 40px;
+    }
+
+}
+/* ================================= */
+/* BETTER CARTOON CHARACTERS */
+/* ================================= */
+
+.character {
+    position: absolute;
+    bottom: 17%;
+    width: 170px;
+    height: 270px;
+    text-align: center;
+
+    animation: characterFloat 3s ease-in-out infinite;
+}
+
+
+/* BODY AREA */
+
+.girlBody,
+.boyBody {
+    position: relative;
+    width: 150px;
+    height: 145px;
+    margin: -5px auto 0;
+}
+
+
+/* GIRL DRESS */
+
+.dress {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    width: 75px;
+    height: 85px;
+
+    background: #ff6f91;
+
+    border-radius: 15px 15px 35px 35px;
+
+    border: 3px solid #333;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+
+/* BOY SHIRT */
+
+.shirt {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    width: 78px;
+    height: 82px;
+
+    background: #55c9d8;
+
+    border-radius: 12px 12px 18px 18px;
+
+    border: 3px solid #333;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+
+/* ARMS */
+
+.arm {
+    position: absolute;
+
+    top: 15px;
+
+    width: 20px;
+    height: 70px;
+
+    background: #ffd6b3;
+
+    border: 3px solid #333;
+
+    border-radius: 20px;
+
+    z-index: -1;
+}
+
+
+/* left hand/arm */
+
+.leftArm {
+    left: 25px;
+    transform: rotate(18deg);
+}
+
+
+/* right hand/arm */
+
+.rightArm {
+    right: 25px;
+    transform: rotate(-18deg);
+}
+
+
+/* little hands */
+
+.leftArm::after,
+.rightArm::after {
+
+    content: "•";
+
+    position: absolute;
+
+    bottom: -12px;
+    left: 3px;
+
+    font-size: 25px;
+
+    color: #ffd6b3;
+}
+
+
+/* LEGS */
+
+.leg {
+    position: absolute;
+
+    top: 78px;
+
+    width: 22px;
+    height: 55px;
+
+    background: #ffd6b3;
+
+    border: 3px solid #333;
+
+    border-radius: 15px;
+}
+
+
+/* GIRL LEGS */
+
+.leftLegCharacter {
+    left: 52px;
+}
+
+.rightLegCharacter {
+    right: 52px;
+}
+
+
+/* BOY TROUSER */
+
+.boyBody .leg {
+    background: #394a8a;
+}
+
+
+/* SHOES */
+
+.shoe {
+    position: absolute;
+
+    top: 123px;
+
+    width: 38px;
+    height: 18px;
+
+    background: #333;
+
+    border-radius: 50%;
+
+}
+
+
+.leftShoe {
+    left: 43px;
+}
+
+.rightShoe {
+    right: 43px;
+}
+
+
+/* MAKE BOY SLIGHTLY TALLER */
+
+.boy {
+    transform: scale(1.05);
+}
+
+
+/* CHARACTER POSITION */
+
+.girl {
+    left: 18%;
+}
+
+.boy {
+    right: 18%;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .character {
+        transform: scale(.72);
+        bottom: 19%;
+    }
+
+    .girl {
+        left: 0;
+    }
+
+    .boy {
+        right: 0;
+        transform: scale(.76);
+    }
+
+}
+/* =============================== */
+/* CANDLE INTERACTION */
+/* =============================== */
+
+.candle {
+    cursor: pointer;
+    z-index: 20;
+}
+
+.flame {
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.flame:hover {
+    transform: scale(1.2);
+}
+
+#candleMessage {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 7%;
+
+    transform: translateX(-50%);
+
+    padding: 12px 22px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    color: #8e3155;
+
+    border-radius: 25px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+
+    animation: messageFloat 2s ease-in-out infinite;
+
+    z-index: 30;
+
+    white-space: nowrap;
+}
+
+@keyframes messageFloat {
+
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+
+}
+
+
+/* Candle blown */
+
+.flame.blown {
+
+    opacity: 0;
+
+    transform: scale(0);
+
+}
+
+
+/* Little smoke */
+
+.smoke {
+
+    position: absolute;
+
+    left: 50%;
+    top: -18px;
+
+    transform: translateX(-50%);
+
+    font-size: 22px;
+
+    animation: smokeUp 1.5s ease forwards;
+
+}
+
+@keyframes smokeUp {
+
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-45px);
+    }
+
+}/* =============================== */
+/* CAKE CUTTING */
+/* =============================== */
+
+.knife {
+    cursor: pointer;
+    z-index: 40;
+    transition: transform 0.3s ease;
+}
+
+.knife:hover {
+    transform: rotate(-20deg) scale(1.15);
+}
+
+.knife.cut {
+    animation: knifeCut 0.8s ease;
+}
+
+@keyframes knifeCut {
+
+    0% {
+        transform: rotate(-20deg) translate(0, 0);
+    }
+
+    40% {
+        transform: rotate(15deg) translate(-35px, -25px);
+    }
+
+    70% {
+        transform: rotate(-10deg) translate(-15px, 5px);
+    }
+
+    100% {
+        transform: rotate(-20deg) translate(0, 0);
+    }
+}
+
+#cake.cutCake {
+    animation: cakeCut 0.8s ease;
+}
+
+@keyframes cakeCut {
+
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.15);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+.cakeMessage {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 7%;
+
+    transform: translateX(-50%);
+
+    padding: 12px 22px;
+
+    background: rgba(255,255,255,.94);
+
+    color: #8e3155;
+
+    border-radius: 25px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+
+    z-index: 30;
+
+    white-space: nowrap;
+
+}
+/* =============================== */
+/* VISIBLE CAKE CUT */
+/* =============================== */
+
+#cake {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+
+.cakeEmoji {
+    display: block;
+    font-size: 80px;
+    transition: 0.6s ease;
+}
+
+.cakeSlice {
+    display: none;
+
+    position: absolute;
+
+    left: 65px;
+    top: 15px;
+
+    font-size: 55px;
+
+    transform: rotate(15deg);
+
+    animation: sliceMove 1s ease forwards;
+}
+
+#cake.cutCake .cakeEmoji {
+    transform: translateX(-18px);
+}
+
+#cake.cutCake .cakeSlice {
+    display: block;
+}
+
+@keyframes sliceMove {
+
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(45px, -5px) rotate(15deg);
+    }
+}
+
+
+/* Strong knife movement */
+
+.knife.cut {
+    animation: realKnifeCut 1s ease;
+}
+
+@keyframes realKnifeCut {
+
+    0% {
+        transform: rotate(-20deg) translate(0, 0);
+    }
+
+    30% {
+        transform: rotate(20deg) translate(-45px, -35px);
+    }
+
+    55% {
+        transform: rotate(-5deg) translate(-15px, 10px);
+    }
+
+    75% {
+        transform: rotate(15deg) translate(-35px, -15px);
+    }
+
+    100% {
+        transform: rotate(-20deg) translate(0, 0);
+    }
+}

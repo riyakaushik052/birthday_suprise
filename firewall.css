@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at top,
+        #35145c,
+        #160b2c 55%,
+        #080512);
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* FIREWALL */
+
+.firewallScreen {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+}
+
+
+.lockIcon {
+
+    font-size: 70px;
+
+    animation: pulse 1.5s infinite;
+}
+
+
+h1 {
+
+    font-size: 32px;
+
+    margin: 15px 0;
+
+}
+
+
+.subtitle {
+
+    opacity: .8;
+
+    font-size: 17px;
+
+}
+
+
+.firewallBox {
+
+    width: min(500px, 90%);
+
+    margin-top: 30px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 30px rgba(255,70,150,.2);
+
+}
+
+
+.security {
+
+    margin-bottom: 25px;
+
+    font-weight: bold;
+
+}
+
+
+.loadingBar {
+
+    width: 100%;
+
+    height: 15px;
+
+    background: rgba(255,255,255,.15);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+#progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #ff4f9a,
+        #ff9fc8
+    );
+
+    transition: width .1s linear;
+
+}
+
+
+#status {
+
+    margin: 20px 0;
+
+}
+
+
+button {
+
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background: #ff6fa7;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(255,80,150,.35);
+
+    transition: .3s;
+
+}
+
+
+button:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+/* FINAL MESSAGE */
+
+#finalMessage {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10;
+
+    background:
+        radial-gradient(
+            circle,
+            #54166e,
+            #170921
+        );
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 30px;
+
+}
+
+
+#finalMessage.show {
+
+    display: flex;
+
+    animation: appear 1.2s ease;
+
+}
+
+
+.heart {
+
+    font-size: 75px;
+
+    animation: pulse 1.3s infinite;
+}
+
+
+#finalMessage h1 {
+
+    font-size: 38px;
+
+}
+
+
+.quote {
+
+    max-width: 600px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    opacity: .95;
+
+}
+
+
+.finalLove {
+
+    margin-top: 25px;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+}
+
+
+.sparkles {
+
+    margin-top: 25px;
+
+    font-size: 25px;
+
+}
+
+
+@keyframes pulse {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .firewallBox {
+        padding: 22px;
+    }
+
+    .quote {
+        font-size: 16px;
+    }
+
+    .finalLove {
+        font-size: 27px;
+    }
+
+}

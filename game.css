@@ -1,0 +1,624 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#140021,#3d0c5e,#ff4f9a);
+    position:relative;
+    color:white;
+}
+
+/* Background */
+
+.stars{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.moon{
+    position:absolute;
+    top:40px;
+    right:50px;
+    width:80px;
+    height:80px;
+    background:#fff8b5;
+    border-radius:50%;
+    box-shadow:0 0 30px white;
+}
+
+.cloud{
+    position:absolute;
+    width:150px;
+    height:50px;
+    background:rgba(255,255,255,.2);
+    border-radius:50px;
+}
+
+.cloud1{
+    top:80px;
+    left:10%;
+}
+
+.cloud2{
+    top:140px;
+    right:15%;
+}
+
+/* Top Bar */
+
+.topBar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:20px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    z-index:100;
+}
+
+.score,
+.timer{
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* Game Area */
+
+#gameArea{
+    position:absolute;
+    top:80px;
+    left:0;
+    width:100%;
+    height:calc(100vh - 80px);
+    overflow:hidden;
+}
+
+/* Hearts */
+
+.heart{
+    position:absolute;
+    font-size:40px;
+    cursor:pointer;
+    user-select:none;
+}
+
+/* Start Screen */
+
+#startScreen{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:500px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    z-index:999;
+}
+
+#startScreen h1{
+    margin-bottom:20px;
+    font-size:40px;
+}
+
+#startScreen p{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+#startScreen button{
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    background:#ff4d94;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+/* Victory Screen */
+
+#victory{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:500px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(12px);
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    z-index:1000;
+}
+
+#victory h1{
+    margin-bottom:15px;
+    font-size:38px;
+}
+
+#victory h2{
+    margin-bottom:25px;
+}
+
+#victory button{
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    background:#ff4d94;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.05);
+    transition:.3s;
+}
+/* ================================= */
+/* LETTER SCREEN */
+/* ================================= */
+
+#letterScreen {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    z-index: 1000;
+
+}
+
+
+/* LETTER CARD */
+
+.letterCard {
+
+    width: min(900px, 95%);
+
+    min-height: 500px;
+
+    padding: 45px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 55px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.94);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.35);
+
+    animation: letterAppear 1s ease;
+
+}
+
+
+/* APPEAR ANIMATION */
+
+@keyframes letterAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.75)
+            translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+/* ================================= */
+/* LETTER CONTENT */
+/* ================================= */
+
+.letterContent {
+
+    flex: 1;
+
+    text-align: center;
+
+}
+
+
+.letterContent h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.letterContent p {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin: 14px 0;
+
+}
+
+
+.letterContent .smallText {
+
+    font-size: 16px;
+
+    margin-top: 25px;
+
+}
+
+
+/* CONTINUE BUTTON */
+
+#continueBtn {
+
+    margin-top: 15px;
+
+    padding: 14px 32px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #ff5c91;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(255,92,145,0.35);
+
+    transition: 0.3s;
+
+}
+
+
+#continueBtn:hover {
+
+    transform: scale(1.08);
+
+}
+
+
+/* ================================= */
+/* CARTOON */
+/* ================================= */
+
+.cartoonArea {
+
+    width: 280px;
+
+    height: 350px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.cartoon {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    animation: cartoonFloat 3s ease-in-out infinite;
+
+}
+
+
+@keyframes cartoonFloat {
+
+    0%,100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-12px);
+
+    }
+
+}
+
+
+/* HEAD */
+
+.cartoonHead {
+
+    width: 180px;
+
+    height: 180px;
+
+    position: relative;
+
+    border-radius: 50%;
+
+    background: #ffd6b3;
+
+    border: 4px solid #333;
+
+}
+
+
+/* EYES */
+
+.cartoonEye {
+
+    width: 18px;
+
+    height: 25px;
+
+    position: absolute;
+
+    top: 65px;
+
+    background: #222;
+
+    border-radius: 50%;
+
+}
+
+
+.eyeLeft {
+
+    left: 45px;
+
+}
+
+
+.eyeRight {
+
+    right: 45px;
+
+}
+
+
+/* BLUSH */
+
+.cartoonBlush {
+
+    width: 30px;
+
+    height: 14px;
+
+    position: absolute;
+
+    top: 105px;
+
+    background: #ff9eb5;
+
+    border-radius: 50%;
+
+}
+
+
+.blushLeft {
+
+    left: 20px;
+
+}
+
+
+.blushRight {
+
+    right: 20px;
+
+}
+
+
+/* SMILE */
+
+.cartoonSmile {
+
+    width: 40px;
+
+    height: 20px;
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 105px;
+
+    transform: translateX(-50%);
+
+    border-bottom: 4px solid #333;
+
+    border-radius: 50%;
+
+}
+
+
+/* BODY */
+
+.cartoonBody {
+
+    width: 130px;
+
+    height: 120px;
+
+    margin-top: -5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ff6f91;
+
+    border: 4px solid #333;
+
+    border-radius:
+        60px 60px 25px 25px;
+
+    font-size: 40px;
+
+}
+
+
+/* FLOATING HEART */
+
+.floatingHeart {
+
+    position: absolute;
+
+    top: 30px;
+
+    right: 5px;
+
+    font-size: 45px;
+
+    animation: heartBeat 1.2s infinite;
+
+}
+
+
+@keyframes heartBeat {
+
+    0%,100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.2);
+
+    }
+
+}
+
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media (max-width: 700px) {
+
+    .letterCard {
+
+        flex-direction: column;
+
+        gap: 5px;
+
+        padding: 25px 18px;
+
+        max-height: 92vh;
+
+        overflow-y: auto;
+
+    }
+
+
+    .cartoonArea {
+
+        width: 220px;
+
+        height: 250px;
+
+        transform: scale(0.75);
+
+        margin-bottom: -45px;
+
+    }
+
+
+    .letterContent h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .letterContent p {
+
+        font-size: 16px;
+
+    }
+
+}
+/* Letter text color */
+
+.letterContent {
+    color: #222;
+}
+
+.letterContent h1 {
+    color: #222;
+}
+
+.letterContent p {
+    color: #333;
+}
+
+.letterContent .smallText {
+    color: #444;
+}

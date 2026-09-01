@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Catch My Heart ❤️</title>
+
+<link rel="stylesheet" href="game.css">
+
+</head>
+
+<body>
+
+<!-- Animated Background -->
+
+<div class="stars"></div>
+<div class="moon"></div>
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+
+
+<!-- Top Glass Bar -->
+
+<div class="topBar">
+
+    <div class="score">
+        ❤️ Score :
+        <span id="score">0</span>/15
+    </div>
+
+    <div class="timer">
+        ⏳ Time :
+        <span id="time">20</span>
+    </div>
+
+</div>
+
+
+<!-- Game Area -->
+
+<div id="gameArea"></div>
+
+
+<!-- Start Screen -->
+
+<div id="startScreen">
+
+    <h1>❤️ Catch My Heart ❤️</h1>
+
+    <p>
+        Catch ❤️ Hearts
+        <br>
+        Avoid 💔 Broken Hearts
+        <br>
+        Reach 15 points in 20 seconds.
+    </p>
+
+    <button onclick="startGame()">
+        Start Game ❤️
+    </button>
+
+</div>
+
+
+<!-- Victory Screen -->
+
+<div id="victory">
+
+    <h1>🎉 Congratulations 🎉</h1>
+
+    <h2>You Caught My Heart ❤️</h2>
+
+    <button onclick="nextPage()">
+        Open Surprise 💌
+    </button>
+
+</div>
+
+
+<!-- ================================= -->
+<!-- LETTER + CARTOON SCREEN -->
+<!-- ================================= -->
+
+<div id="letterScreen">
+
+    <div class="letterCard">
+
+        <!-- Cartoon -->
+
+        <div class="cartoonArea">
+
+            <div class="cartoon">
+
+                <div class="cartoonHead">
+
+                    <div class="cartoonEye eyeLeft"></div>
+                    <div class="cartoonEye eyeRight"></div>
+
+                    <div class="cartoonBlush blushLeft"></div>
+                    <div class="cartoonBlush blushRight"></div>
+
+                    <div class="cartoonSmile"></div>
+
+                </div>
+
+                <div class="cartoonBody">
+                    ❤️
+                </div>
+
+            </div>
+
+            <div class="floatingHeart">💗</div>
+
+        </div>
+
+
+        <!-- Letter -->
+
+        <div class="letterContent">
+
+            <h1>Hey You! 💌</h1>
+
+            <p>
+                So... you actually made it this far. 👀
+            </p>
+
+            <p>
+                You caught all those hearts,
+                but this was only the beginning. ✨
+            </p>
+
+            <p>
+                There's still a little surprise waiting
+                for you behind the next door... ❤️
+            </p>
+
+            <p class="smallText">
+                Ready to continue?
+            </p>
+
+            <button id="continueBtn">
+                Continue → 💕
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="letterScreen">
+
+    <div class="letterCard">
+
+        <div class="cartoonArea">
+            <div class="cartoon">
+                <div class="cartoonHead">
+                    <div class="cartoonEye eyeLeft"></div>
+                    <div class="cartoonEye eyeRight"></div>
+                    <div class="cartoonBlush blushLeft"></div>
+                    <div class="cartoonBlush blushRight"></div>
+                    <div class="cartoonSmile"></div>
+                </div>
+
+                <div class="cartoonBody">
+                    ❤️
+                </div>
+            </div>
+
+            <div class="floatingHeart">💗</div>
+        </div>
+
+        <div class="letterContent">
+
+            <h1>Hey You! 💌</h1>
+
+            <p>So... you actually made it this far. 👀</p>
+
+            <p>
+                You caught all those hearts,
+                but this was only the beginning. ✨
+            </p>
+
+            <p>
+                There's still a little surprise waiting
+                for you behind the next door... ❤️
+            </p>
+
+            <p>Ready to continue?</p>
+
+            <button id="continueBtn">
+                Continue → 💕
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>

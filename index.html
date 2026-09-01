@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Hearts -->
+    <div class="hearts">
+        <span>❤️</span>
+        <span>💖</span>
+        <span>💕</span>
+        <span>💗</span>
+        <span>💞</span>
+    </div>
+
+    <!-- Loading Container -->
+    <div class="loading-container">
+
+        <h1>🎂 Happy Birthday ❤️</h1>
+
+        <p class="message">
+            Preparing something made with love...
+        </p>
+
+        <div class="progress-box">
+
+            <div id="progress"></div>
+
+        </div>
+
+        <h2 id="percentage">0%</h2>
+
+    </div>
+
+<script>
+
+let progress = document.getElementById("progress");
+let percentage = document.getElementById("percentage");
+
+let count = 0;
+
+let loading = setInterval(function(){
+
+    count++;
+
+    progress.style.width = count + "%";
+    percentage.innerHTML = count + "%";
+
+    if(count >= 100){
+
+        clearInterval(loading);
+
+        setTimeout(function(){
+
+            window.location.href = "welcome.html";
+
+        },1000);
+
+    }
+
+},40);
+
+</script>
+
+</body>
+</html>

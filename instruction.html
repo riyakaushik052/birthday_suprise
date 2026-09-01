@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Instructions</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#140021,#3d0c5e,#ff4f9a);
+overflow:hidden;
+color:white;
+}
+
+/* Floating Hearts */
+.heart{
+position:absolute;
+font-size:25px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+.card{
+
+width:90%;
+max-width:600px;
+padding:40px;
+border-radius:25px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(12px);
+text-align:center;
+box-shadow:0 0 25px rgba(255,255,255,.2);
+
+}
+
+h1{
+
+font-size:42px;
+margin-bottom:20px;
+
+}
+
+.rules{
+
+text-align:left;
+margin:30px auto;
+font-size:20px;
+line-height:45px;
+
+}
+
+button{
+
+margin-top:20px;
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:#ff4d94;
+color:white;
+cursor:pointer;
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="heart" style="left:10%;animation-duration:8s;">❤️</div>
+<div class="heart" style="left:25%;animation-duration:10s;">💖</div>
+<div class="heart" style="left:45%;animation-duration:7s;">💕</div>
+<div class="heart" style="left:70%;animation-duration:9s;">💗</div>
+<div class="heart" style="left:90%;animation-duration:11s;">💞</div>
+
+<div class="card">
+
+<h1>❤️ Catch My Heart ❤️</h1>
+
+<p>Read the rules carefully before starting.</p>
+
+<div class="rules">
+
+❤️ Catch Hearts = <b>+1 Point</b><br>
+
+💔 Broken Hearts = <b>-1 Point</b><br>
+
+⏳ Time = <b>20 Seconds</b><br>
+
+🎯 Target = <b>15 Hearts</b>
+
+</div>
+
+<button onclick="startGame()">
+Start Game ❤️
+</button>
+
+</div>
+
+<script>
+
+function startGame(){
+
+window.location.href="game.html";
+
+}
+
+</script>
+
+</body>
+</html>
